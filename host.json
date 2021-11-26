@@ -1,0 +1,24 @@
+{
+    "version": "2.0",
+    "logging": {
+        "applicationInsights": {
+            "samplingSettings": {
+                "isEnabled": true,
+                "excludedTypes": "Request"
+            }
+        },
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Warning",
+            "Microsoft.Hosting.Lifetime": "Warning"
+        },
+        "Console": {
+            "IncludeScopes": true,
+            "LogLevel": {
+                "Microsoft.Extensions.Hosting": "Warning",
+                "Company.Function": "Information",
+                "Default": "Information"
+            }
+        }
+    }
+}
