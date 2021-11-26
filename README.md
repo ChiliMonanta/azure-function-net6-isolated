@@ -1,0 +1,1 @@
+# azure-function-net6-isolated
