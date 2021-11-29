@@ -9,7 +9,6 @@ public class Program
     public static void Main()
     {
         var host = new HostBuilder()
-            .ConfigureFunctionsWorkerDefaults()
             .ConfigureFunctionsWorkerDefaults(workerApplication =>
             {
                 workerApplication.UseMiddleware<MyCustomMiddleware>();
@@ -17,12 +16,13 @@ public class Program
             .ConfigureLogging(builder =>
             {
                 builder.ClearProviders();
-                builder.AddSimpleConsole(options => {
-                        options.IncludeScopes = true;
-                        options.SingleLine = true;
-                        options.TimestampFormat = "hh:mm:ss ";
-                    });
-                    //.AddConsoleFormatter<CustomTimePrefixingFormatter, CustomWrappingConsoleFormatterOptions>();
+                builder.AddSimpleConsole(options =>
+                {
+                    options.IncludeScopes = true;
+                    options.SingleLine = true;
+                    //options.TimestampFormat = "hh:mm:ss ";
+                });
+                //.AddConsoleFormatter<CustomTimePrefixingFormatter, CustomWrappingConsoleFormatterOptions>();
             })
             .Build();
 
